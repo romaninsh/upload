@@ -11,8 +11,8 @@ class Form_Field_BlueimpUpload extends \Form_Field {
     {
         parent::init();
 
-        $l=$this->api->locate('addons','romaninsh/upload','location');
-        $this->api->pathfinder->addLocation($this->api->locate('addons','romaninsh/upload'),array(
+        $l=$this->api->locate('addons',__NAMESPACE__,'location');
+        $this->api->pathfinder->addLocation($this->api->locate('addons',__NAMESPACE__),array(
             'js'=>'js'
         ))->setParent($l);
 
