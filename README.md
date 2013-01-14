@@ -27,6 +27,15 @@ Notes:
  * Requires filestore, can't use without
  * Supports single file upload, although comes with FileManager view 
  
+ 
+**NOTE: Perhaps will re-shuffle those views to group them**
+ 
+### View/FileAdmin
+
+ * Shows file information
+ * Allows to delete or download file
+ * Uses similar template to original upload field
+
 ### View/Thumb
 
  * This is a simple View which will show a thumbnail. 
@@ -51,4 +60,34 @@ Notes:
  * Lister similar to Thumb but shows multiple files
  * Does not require model to be loaded, will iterate it
  * Still supports drop-zone
+ * Can enable re-ordering easily
+ * Can link with form field, which would contain list of model IDs
  
+### View/FileListAdmin
+
+ * Lister similar to ThumbAdmin, allowing to delete individual images
+ 
+API Reference
+----
+
+### Stand-alone use:
+```
+$uploader = $this->add('romaninsh/upload/View_Upload');
+$uploader -> setModel('filestore/File');
+```
+This works without a form. Simply relies on BlueImp Uploader here. You can specify $uploder->options to change anything about the uploading. You can use hook "uploaded" to do something useful with this.
+
+Test case: test/romaninsh/upload/test1
+
+#### Form use:
+```
+$uploader = $form->addField('romaninsh/upload/Upload','file_id');
+$uploader -> setModel('filestore/File');
+```
+
+After file is uploaded will put the model->id inside a hidden 'file_id' field. This field automatically relies on View/FileAdmin or View/ThumbAdmin (depending on your model) to display uploaded file. It will also hide upload field after successful upload and show it back if you remove the file.
+
+Will also trigger 'upload' so that it's more or less compatible with previous uploader implementation.
+
+If you enable multi-file use, then it would be relying on the lister view.
+
