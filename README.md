@@ -32,7 +32,7 @@ Notes:
  
 ### View/FileAdmin
 
- * Shows file information
+ * Basically a regular View with pre-defined template similar to original upload
  * Allows to delete or download file
  * Uses similar template to original upload field
 
