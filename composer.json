@@ -1,0 +1,9 @@
+{
+    "name": "romaninsh/upload",
+    "version": "1.0",
+    "source": {
+        "url": "git@github.com:romaninsh/upload.git",
+        "type": "git",
+        "reference": "origin/master"
+    }
+}
