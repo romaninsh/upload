@@ -72,7 +72,7 @@ API Reference
 
 ### Stand-alone use:
 ```
-$uploader = $this->add('romaninsh/upload/View_Upload');
+$uploader = $this->add('romaninsh/upload/View_Uploader');
 $uploader -> setModel('filestore/File');
 ```
 This works without a form. Simply relies on BlueImp Uploader here. You can specify $uploder->options to change anything about the uploading. You can use hook "uploaded" to do something useful with this.

@@ -1,6 +1,6 @@
 <?php
 
-namespace romaninsh\blueimp;
+namespace romaninsh\upload;
 
 class View_Uploader extends \AbstractView
 {
